@@ -1,0 +1,60 @@
+.view-blog-page {
+	padding: 72px 7vw 96px;
+	background: #f4f1ea;
+}
+
+.view-blog-content,
+.view-blog-empty {
+	max-width: 780px;
+	margin: 0 auto;
+}
+
+.view-blog-content h1,
+.view-blog-empty h1 {
+	max-width: 700px;
+	margin: 24px 0 16px;
+	color: #18252d;
+	font: 600 clamp(38px, 6vw, 72px)/1.02 'Space Grotesk', sans-serif;
+}
+
+.back-link {
+	display: inline-block;
+	margin-bottom: 64px;
+	color: #d46132;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.back-link:hover {
+	text-decoration: underline;
+}
+
+.view-blog-author {
+	margin: 0;
+	color: #53636a;
+	font-size: 16px;
+}
+
+.view-blog-meta {
+	display: flex;
+	gap: 24px;
+	margin: 28px 0 48px;
+	color: #708086;
+	font-size: 13px;
+}
+
+.view-blog-excerpt {
+	max-width: 680px;
+	color: #53636a;
+	font-size: 21px;
+	line-height: 1.7;
+}
+
+.view-blog-empty h1 {
+	font-size: clamp(34px, 5vw, 58px);
+}
+
+@media (max-width: 760px) {
+	.view-blog-page { padding: 48px 6vw 72px; }
+	.back-link { margin-bottom: 44px; }
+}

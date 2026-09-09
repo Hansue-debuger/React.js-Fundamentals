@@ -42,6 +42,21 @@
 	font-size: 12px;
 }
 
+.blog-card button {
+	align-self: flex-start;
+	margin-top: 20px;
+	padding: 10px 16px;
+	border: 0;
+	background: #18252d;
+	color: #fff;
+	cursor: pointer;
+	font: 600 13px 'Space Grotesk', sans-serif;
+}
+
+.blog-card button:hover {
+	background: #d46132;
+}
+
 @media (max-width: 760px) {
 	.blog-card { min-height: 190px; }
 }

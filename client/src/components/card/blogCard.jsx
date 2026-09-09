@@ -1,6 +1,6 @@
 import './blogCard.css'
 
-function BlogCard({ blog }) {
+function BlogCard({ blog, onViewBlog }) {
   return (
     <article className="blog-card">
       <span className="blog-category">{blog.category}</span>
@@ -11,6 +11,7 @@ function BlogCard({ blog }) {
         <span>{blog.date}</span>
         <span>{blog.readTime}</span>
       </footer>
+      <button type="button" onClick={() => onViewBlog(blog)}>View Blog</button>
     </article>
   )
 }

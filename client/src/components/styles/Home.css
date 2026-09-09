@@ -53,6 +53,30 @@
 	font-size: 28px;
 }
 
+.blog-search-label {
+	display: block;
+	margin-top: 28px;
+	margin-bottom: 8px;
+	color: #53636a;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.blog-search {
+	width: min(100%, 420px);
+	padding: 13px 15px;
+	border: 1px solid #b9c3c1;
+	border-radius: 0;
+	background: #fff;
+	color: #18252d;
+	font: 16px 'DM Sans', sans-serif;
+}
+
+.blog-search:focus {
+	outline: 2px solid #d46132;
+	outline-offset: 2px;
+}
+
 .blog-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);

@@ -1,0 +1,31 @@
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px clamp(24px, 6vw, 72px);
+  border-top: 1px solid rgba(24, 37, 45, 0.12);
+  background: #18252d;
+  color: #f6f0e8;
+  font-size: 13px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer p:first-child {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+
+.footer-note {
+  color: #e8c9a8;
+}
+
+@media (max-width: 680px) {
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

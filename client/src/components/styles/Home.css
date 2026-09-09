@@ -77,6 +77,21 @@
 	outline-offset: 2px;
 }
 
+.blog-category-select {
+	width: min(100%, 420px);
+	padding: 13px 15px;
+	border: 1px solid #b9c3c1;
+	border-radius: 0;
+	background: #fff;
+	color: #18252d;
+	font: 16px 'DM Sans', sans-serif;
+}
+
+.blog-category-select:focus {
+	outline: 2px solid #d46132;
+	outline-offset: 2px;
+}
+
 .blog-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);

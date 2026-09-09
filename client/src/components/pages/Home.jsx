@@ -7,9 +7,12 @@ import '../styles/Home.css'
 function Home({ onSelectBlog }) {
   const [countBlogs] = useState(BLOGS.length)
   const [searchTerm, setSearchTerm] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState('All')
   const navigate = useNavigate()
+  const categories = [...new Set(BLOGS.map((blog) => blog.category))]
   const filteredBlogs = BLOGS.filter((blog) => (
     blog.title.toLowerCase().includes(searchTerm.toLowerCase())
+    && (selectedCategory === 'All' || blog.category === selectedCategory)
   ))
 
   function handleViewBlog(blog) {
@@ -38,6 +41,18 @@ function Home({ onSelectBlog }) {
             onChange={(event) => setSearchTerm(event.target.value)}
             placeholder="Search by title"
           />
+          <label className="blog-search-label" htmlFor="blog-category">Filter by category</label>
+          <select
+            id="blog-category"
+            className="blog-category-select"
+            value={selectedCategory}
+            onChange={(event) => setSelectedCategory(event.target.value)}
+          >
+            <option value="All">All categories</option>
+            {categories.map((category) => (
+              <option key={category} value={category}>{category}</option>
+            ))}
+          </select>
         </div>
         <div className="blog-grid">
           {filteredBlogs.map((blog) => (

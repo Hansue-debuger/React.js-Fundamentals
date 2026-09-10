@@ -77,3 +77,85 @@
     padding: 20px;
   }
 }
+
+.modal-backdrop {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(23, 37, 43, .58);
+}
+
+.confirm-modal,
+.blog-modal {
+  width: min(100%, 500px);
+  box-sizing: border-box;
+  padding: 30px;
+  background: #fffdf9;
+  box-shadow: 0 24px 70px rgba(23, 37, 43, .26);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.confirm-modal__icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 22px;
+  place-items: center;
+  border-radius: 50%;
+  background: #c04b35;
+  color: #fffdf9;
+  font: 700 20px 'Space Grotesk', sans-serif;
+}
+
+.confirm-modal h2,
+.blog-modal h2 {
+  margin: 0 0 9px;
+  color: #18252d;
+  font: 600 28px/1.08 'Space Grotesk', sans-serif;
+}
+
+.confirm-modal__message {
+  margin: 0;
+  color: #53636a;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.confirm-modal__actions,
+.blog-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.modal-button {
+  padding: 11px 16px;
+  border: 0;
+  cursor: pointer;
+  font: 700 12px 'DM Sans', sans-serif;
+}
+
+.modal-button--quiet { background: #edf1ee; color: #53636a; }
+.modal-button--primary { background: #1b5961; color: #fffdf9; }
+.modal-button--danger { background: #c04b35; color: #fffdf9; }
+.modal-button:hover { filter: brightness(.92); }
+
+.blog-modal { width: min(100%, 650px); }
+.blog-modal__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.modal-close { border: 0; background: transparent; color: #879497; cursor: pointer; font-size: 28px; line-height: 1; }
+.modal-close:hover { color: #c04b35; }
+.blog-modal__form { display: grid; gap: 8px; margin-top: 28px; }
+.blog-modal__form label { color: #53636a; font-size: 11px; font-weight: 700; }
+.blog-modal__form input, .blog-modal__form select, .blog-modal__form textarea { box-sizing: border-box; width: 100%; margin-bottom: 10px; padding: 12px; border: 1px solid #c9d0d0; border-radius: 0; background: #fff; color: #18252d; font: 13px 'DM Sans', sans-serif; }
+.blog-modal__form input:focus, .blog-modal__form select:focus, .blog-modal__form textarea:focus { outline: 2px solid #d46132; outline-offset: 1px; }
+.blog-modal__split { display: grid; grid-template-columns: .7fr 1.3fr; gap: 12px; }
+.blog-modal__split > div { display: grid; gap: 8px; }
+
+@media (max-width: 520px) {
+  .confirm-modal, .blog-modal { padding: 22px; }
+  .blog-modal__split { grid-template-columns: 1fr; gap: 0; }
+}

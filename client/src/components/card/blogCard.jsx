@@ -1,6 +1,6 @@
 import './blogCard.css'
 
-function BlogCard({ blog, onViewBlog }) {
+function BlogCard({ blog, onLikeBlog, onViewBlog }) {
   return (
     <article className="blog-card">
       <span className="blog-category">{blog.category}</span>
@@ -11,7 +11,12 @@ function BlogCard({ blog, onViewBlog }) {
         <span>{blog.date}</span>
         <span>{blog.readTime}</span>
       </footer>
-      <button type="button" onClick={() => onViewBlog(blog)}>View Blog</button>
+      <div className="blog-card-actions">
+        <button type="button" className="blog-card-view" onClick={() => onViewBlog(blog)}>View Blog</button>
+        <button type="button" className="blog-card-like" onClick={() => onLikeBlog(blog.id)} aria-label={`Like ${blog.title}`}>
+          <span aria-hidden="true">♡</span> {blog.likes}
+        </button>
+      </div>
     </article>
   )
 }

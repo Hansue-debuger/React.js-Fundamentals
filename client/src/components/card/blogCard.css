@@ -42,19 +42,42 @@
 	font-size: 12px;
 }
 
-.blog-card button {
-	align-self: flex-start;
+.blog-card-actions {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
 	margin-top: 20px;
+}
+
+.blog-card button {
 	padding: 10px 16px;
 	border: 0;
-	background: #18252d;
-	color: #fff;
 	cursor: pointer;
 	font: 600 13px 'Space Grotesk', sans-serif;
 }
 
-.blog-card button:hover {
+.blog-card-view {
+	padding: 10px 16px;
+	background: #18252d;
+	color: #fff;
+}
+
+.blog-card-view:hover {
 	background: #d46132;
+}
+
+.blog-card-like {
+	background: transparent;
+	color: #c04b35;
+}
+
+.blog-card-like span {
+	font-size: 20px;
+}
+
+.blog-card-like:hover {
+	color: #1b5961;
 }
 
 @media (max-width: 760px) {

@@ -1,16 +1,15 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { BLOGS } from '../config/Constants'
 import BlogCard from '../card/blogCard'
 import '../styles/Home.css'
 
-function Home({ onSelectBlog }) {
-  const [countBlogs] = useState(BLOGS.length)
+function Home({ blogs, onLikeBlog, onSelectBlog }) {
+  const [countBlogs] = useState(blogs.length)
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All')
   const navigate = useNavigate()
-  const categories = [...new Set(BLOGS.map((blog) => blog.category))]
-  const filteredBlogs = BLOGS.filter((blog) => (
+  const categories = [...new Set(blogs.map((blog) => blog.category))]
+  const filteredBlogs = blogs.filter((blog) => (
     blog.title.toLowerCase().includes(searchTerm.toLowerCase())
     && (selectedCategory === 'All' || blog.category === selectedCategory)
   ))
@@ -56,7 +55,7 @@ function Home({ onSelectBlog }) {
         </div>
         <div className="blog-grid">
           {filteredBlogs.map((blog) => (
-            <BlogCard key={blog.id} blog={blog} onViewBlog={handleViewBlog} />
+            <BlogCard key={blog.id} blog={blog} onLikeBlog={onLikeBlog} onViewBlog={handleViewBlog} />
           ))}
         </div>
       </section>

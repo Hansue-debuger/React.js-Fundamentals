@@ -1,16 +1,18 @@
 import { useState } from 'react'
 import { USER_CREDENTIALS } from '../config/Constants'
+import FailedPopUp from '../modal/FailedPopUp'
+import SuccessPopUp from '../modal/SuccessPopUp'
 import '../styles/Login.css'
 
 function Login() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [message, setMessage] = useState('')
+  const [loginStatus, setLoginStatus] = useState('')
 
   function handleSubmit(event) {
     event.preventDefault()
     const isValid = username === USER_CREDENTIALS.username && password === USER_CREDENTIALS.password
-    setMessage(isValid ? 'Login successful. Welcome back.' : 'Username or password is incorrect.')
+    setLoginStatus(isValid ? 'success' : 'failed')
   }
 
   return (
@@ -26,7 +28,18 @@ function Login() {
           <input id="password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} required />
           <button type="submit">Log in</button>
         </form>
-        {message && <p className="login-message" role="status">{message}</p>}
+        {loginStatus === 'success' && (
+          <SuccessPopUp
+            Title="Login successful"
+            Message={`Welcome back, ${username}!`}
+          />
+        )}
+        {loginStatus === 'failed' && (
+          <FailedPopUp
+            Title="Invalid credentials"
+            Message="The username or password you entered is incorrect."
+          />
+        )}
       </section>
     </main>
   )
